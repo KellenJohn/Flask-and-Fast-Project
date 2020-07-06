@@ -60,7 +60,9 @@
             </div>
             <div id="navbar" class="navbar-collapse collapse">
               <ul class="nav navbar-nav">
-                <li class="active"><a href="/welcome">首頁</a></li>
+                <li class="active">
+                  <a href="/welcome">首頁</a>
+                </li>
                 <li class="dropdown">
                   <a class="dropdown-toggle" data-toggle="dropdown" href="#">帳號管理<span class="caret"></span></a>  
                   <ul class="dropdown-menu">

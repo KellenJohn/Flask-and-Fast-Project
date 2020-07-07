@@ -1,6 +1,7 @@
 
 [參考資訊](http://tsweb44.com/TS_Bootstrap4/i4.html)
 [Carousel](https://andy6804tw.github.io/2018/01/14/bootstrap-carousel/)
+[Free Carousel](https://freefrontend.com/bootstrap-carousels/)
 [Codepen](https://codepen.io/pen/)
 
 ### Bootstrap
@@ -27,11 +28,35 @@
 ### 下拉式選單
 
 ```html
+<select name"select_one>
+<option value="1">選擇第一個選項</option>
+<option value="2">選擇第二個選項</option>
+<option value="3">選擇第三個選項</option>
+</select>
+```
 
+### 表單選項按鈕 radio buttons
 
+請選擇喜歡吃的水果
+○ 蘋果
+○ 香蕉
+
+```html
+<form>
+請選擇喜歡吃的水果<br>
+<input type="radio" name="Fruit" value="Apple"> 蘋果<br>
+<input type="radio" name="Fruit" value="Bananas"> 香蕉<br>
+</form>
 ```
 
 ### Navbar 導覽列
+
+第二行：`<nav class="navbar navbar-expand-sm bg-light navbar-light">` <br>
+利用 `<nav>` 標籤宣告導覽列的開頭。                                     <br>
+並以 `class="navbar navbar-expand-sm bg-light navbar-light"` 為這個導覽列標註上了各種屬性，                          <br>
+包括 "navbar"、"navbar-expand"(橫式導覽列)、"bg-light"(導覽列背景的顏色)、"navbar-light"(導覽列連結的字體顏色)➂。      <br>
+更改屬性就可以很快速的更改導覽列的外觀： <br>
+
 ```html
 <body>
 <nav class="navbar navbar-expand-sm bg-light navbar-light">
@@ -49,6 +74,9 @@
 </nav>
 </body>
 ```
+
+
+
 
 ```html
 <div class="navbar-wrapper">

@@ -58,11 +58,11 @@
 </nav>
 </body>
 ```
-* <ul class="navbar-nav">
+* `<ul class="navbar-nav">`
   * 利用<ul>無序列清單(unordered list)將導覽列裡面所有的項目放進這個標籤裡。
 * <li class="nav-item">
   * 利用標籤<li>說明此為無序列清單中的項目(list item)，代表導覽列中的一個項目。
-* <a class="nav-link" href="#">Link 1</a>
+* `<a class="nav-link" href="#">Link 1</a>`
   * 利用標籤<a>表示這是一個連結，而連接會帶我們前往href指定的位置。
 
 
@@ -181,11 +181,12 @@ Bootstrap 將網頁的版面分成 12 分，或說 12 欄(column)。
 ### Bootstrap：Jumbotron
 因為網頁內容還很空虛的關係，讓我們擺一個大大的超大屏幕➃，一次把空間吃光光。
 
+```html
 <div class="jumbotron">
   <h1>Bootstrap Tutorial</h1>
   <p>Bootstrap is the most popular HTML, CSS...</p>
 </div>
-
+```
 
 使用起來相當方便，用一個<div class="jumbotron">宣告我們將放入超大屏幕就行了！
 

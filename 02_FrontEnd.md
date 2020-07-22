@@ -5,7 +5,7 @@
   * [Codepen](https://codepen.io/pen/)
   * [html](http://tsweb44.com/TS_Bootstrap4/i18.html)
 
-
+https://www.wfublog.com/2016/01/font-awesome-cheat-sheet.html
 
 ## HTML 基本範例
 

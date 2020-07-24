@@ -66,8 +66,9 @@ Register.html
 
 {% block app_content %}
   <h1>Register Now</h1>
+  <br>
   <div class="row">
-    <div class="col-md-8">
+    <div class="col-md-6">
       { import 'bootstrap/wtf.html' as wtf %}
       {{ wtf.quick_form(form) }}
     </div>    

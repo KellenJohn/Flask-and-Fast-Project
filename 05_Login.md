@@ -37,13 +37,56 @@
   
 </form>
 ```
+
+Register.html
+```html
+<!-- 首頁 -->
+
+<div>
+  </button>
+  <a class="navbar-brand" href="{{ url_for('index') }}">Flask App</a>
+</div>
+
+<!-- Collect the nav links, forms, and other content for toggling -->
+<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+  <ul class="nav navbar-nav">
+    <li class="{% if request.endpoint == 'index'}"}active{% endif %}>
+      <a href="{{ url_for('index') }}">Home</a>
+    </li>
+  </ul>
+  <ul class="nav navbar-nav navbar-right">
+    <li class="{% if request.endpoint == 'register' %}active{% endif %}">
+      <a href="{{ url_for('register')}}">Register</a>
+    </li>
+  </ul>
+</div> <!-- /.navbar-collapse -->
+
+<!-- 登錄網頁 Register.html-->
+{% extends 'base.html' %}
+
+{% block app_content %}
+  <h1>Register Now</h1>
+  <div class="row">
+    <div class="col-md-8">
+      { import 'bootstrap/wtf.html' as wtf %}
+      {{ wtf.quick_form(form) }}
+    </div>    
+  </div>
+{% endblock %}
+
+```
+
 表單
 ```python
+from flask_wtf import FlaskForm
+from wtforms import StringField
+from wtforms.validators import DataRequired, Length, Email, EqualTo
+
 class RegisterForm(FlaskForm):
     
     username = StringField('Username', validators = [DataRequired(), Length(min=6, max=20)])
     email = StringField('Email', validators = [DataRequired(), Email()])
-    password = PasswordField('Password', validators = [DataRequired(), Length(min=8, max=20))
+    password = PasswordField('Password', validators = [DataRequired(), Length(min=8, max=20)])
     confirm = PasswordField('Repeat Password', validators = [DataRequired(), EqualTo('password')])
     recaptcha = RecaptchaField()
     submit = SubmitField('Register')
@@ -121,4 +164,40 @@ base.html
   </div>
 {% endblock %}
 
+```
+
+```python
+from flask import Flask, render_template
+from flask_bootstrap import Bootstrap
+from flask_sqlalchemy import SQLAlchemy
+
+from config import Config
+form forms import RegisterForm
+
+app = Flask(__name__)
+bootstrap = Bootstrap(app)
+db = SQLAlchemy(app)
+app.config.from_object(Config)
+
+@app.route('/')
+def index():
+    return render_template('index.html')
+    
+@app.route('/register')
+    form = RegisterForm()
+    return render_template('register.html', form = form)
+    
+
+```
+Config.py
+```python
+import os
+basedir = os.path.abspath(os.path.dirname(__file__))
+
+
+class Config(object):
+    SECRET_KEY = os.environ.get('SECRET_KEY') or '12345678'
+    SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL') or 'sqlite://' + os.path.join(basedir, 'app.db')
+    SQLALCHEMY_TRACK_MODIFICATIONS = False
+    
 ```

@@ -37,7 +37,7 @@
   
 </form>
 ```
-
+表單
 ```python
 class RegisterForm(FlaskForm):
     
@@ -47,6 +47,20 @@ class RegisterForm(FlaskForm):
     confirm = PasswordField('Repeat Password', validators = [DataRequired(), EqualTo('password')])
     recaptcha = RecaptchaField()
     submit = SubmitField('Register')
-    
-    def validate_username
+    # 驗證
+    def validate_username(self, username):
+        user = User.query.filter_by(username=username.data).first()
+        if user:
+            raise ValidationError('Username already token, please choose another one.')
+    def validate_email(self, email):
+        user = User.query.filter_by(email=email.data).first()        
+        if user:
+            raise ValidationError('Email already token, please choose another one.')
+        
+```
+路由
+```python
+
+@app.route('/register', methods=['GET','POST'])
+        
 ```

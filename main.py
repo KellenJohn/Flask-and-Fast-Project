@@ -38,7 +38,7 @@ def account():
         "note":"研發雲帳號管理",
         "account": "08771",
         "department": "IF-System",
-        "member":["Stacy","Apple","Rosa","David","Peter"],
+        "member":["Stacy","Apple","Rose","David","Peter"],
         "my_dict": {"city": "Taipei"},
         "my_list": [1, 2, 3, 4, 5],
         "my_int": 39

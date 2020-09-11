@@ -19,7 +19,10 @@ NGINX Plus API Gateway
 * 一秒鐘只能存取幾次
 * 驗證與授權部份 - 對外, JWTs
 * API Dashbaord
-* 
+* DNS Load Balance / ttl 設定很小、設置前方較合適、
+* endpoint 分權管理
+* 可以對後面的 Pod 收 log
+
 
 
 Clair 
@@ -39,13 +42,8 @@ K8s
 
 Helm2 --> 3
 管理 K8s 的管理工具 - Chart, Config, Release
-
 Ansible - 自動化管理工具 + k8s module
 Shell script - 主要原因為作遠端控制、買了 Ansible tower(權限及執行結果控管)
-
 kubecontrol - 同一個腳本一個 playbook 作完一件事，存在 gitlab for code version
-
-
-
 
 
